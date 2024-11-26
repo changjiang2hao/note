@@ -23,7 +23,7 @@
   
   "dns": {
     "servers": [
-      {"tag": "proxyDns", "address": "https://dns.google/dns-query", "address_resolver": "defaultDns", "address_strategy": "ipv4_only", "detour": "🚀 节点选择"},
+      {"tag": "proxyDns", "address": "https://dns.google/dns-query", "address_resolver": "defaultDns", "address_strategy": "Default", "detour": "🚀 节点选择"},
       {"tag": "localDns", "address": "61.128.128.68", "address_resolver": "defaultDns", "address_strategy": "Default", "detour": "🎯 全球直连"},
       {"tag": "defaultDns", "address": "61.128.128.68", "address_strategy": "Default", "detour": "🎯 全球直连"}
     ],
@@ -66,7 +66,7 @@
     { "tag": "🐬 OneDrive", "type": "selector", "outbounds": ["🚀 节点选择", "♻️ 自动选择", "🔯 香港自动", "🔯 台湾自动", "🔯 狮城自动", "🔯 小日子自动", "🔯 棒子自动", "🔯 漂亮国自动", "🇭🇰 香港", "🇹🇼 台湾", "🇸🇬 狮城", "🇸🇬 狮城", "🇯🇵 小日子", "🇺🇲 漂亮国", "🐸 手动切换"] },
     { "tag": "🎵 TikTok", "type": "selector", "outbounds": ["🚀 节点选择", "♻️ 自动选择", "🔯 台湾自动", "🔯 狮城自动", "🔯 小日子自动", "🔯 棒子自动", "🔯 漂亮国自动", "🇹🇼 台湾", "🇸🇬 狮城", "🇸🇬 狮城", "🇯🇵 小日子", "🇺🇲 漂亮国", "🐸 手动切换"] },
     { "tag": "🎬️ Disney", "type": "selector", "outbounds": ["🚀 节点选择", "♻️ 自动选择", "🔯 香港自动", "🔯 台湾自动", "🔯 狮城自动", "🔯 小日子自动", "🔯 棒子自动", "🔯 漂亮国自动", "🇭🇰 香港", "🇹🇼 台湾", "🇸🇬 狮城", "🇸🇬 狮城", "🇯🇵 小日子", "🇺🇲 漂亮国", "🐸 手动切换"] },
-    { "tag": "🎞️ HBO", "type": "selector", "outbounds": [""🚀 节点选择", "♻️ 自动选择", "🔯 香港自动", "🔯 台湾自动", "🔯 狮城自动", "🔯 小日子自动", "🔯 棒子自动", "🔯 漂亮国自动", "🇭🇰 香港", "🇹🇼 台湾", "🇸🇬 狮城", "🇸🇬 狮城", "🇯🇵 小日子", "🇺🇲 漂亮国", "🐸 手动切换"] },
+    { "tag": "🎞️ HBO", "type": "selector", "outbounds": ["🚀 节点选择", "♻️ 自动选择", "🔯 香港自动", "🔯 台湾自动", "🔯 狮城自动", "🔯 小日子自动", "🔯 棒子自动", "🔯 漂亮国自动", "🇭🇰 香港", "🇹🇼 台湾", "🇸🇬 狮城", "🇸🇬 狮城", "🇯🇵 小日子", "🇺🇲 漂亮国", "🐸 手动切换"] },
     { "tag": "📺️ TVB", "type": "selector", "outbounds": ["🚀 节点选择", ""🔯 香港自动", "🇭🇰 香港", "🐸 手动切换"] },
     { "tag": "🎥 Netflix", "type": "selector", "outbounds": ["🚀 节点选择", "🇳 NETFLIX", "♻️ 自动选择", "🔯 香港自动", "🔯 台湾自动", "🔯 狮城自动", "🔯 小日子自动", "🔯 棒子自动", "🔯 漂亮国自动", "🇭🇰 香港", "🇹🇼 台湾", "🇸🇬 狮城", "🇸🇬 狮城", "🇯🇵 小日子", "🇺🇲 漂亮国", "🐸 手动切换"] },
     { "tag": "📲 Telegram", "type": "selector", "outbounds": ["🚀 节点选择", "♻️ 自动选择", "🔯 香港自动", "🔯 台湾自动", "🔯 狮城自动", "🔯 小日子自动", "🔯 棒子自动", "🔯 漂亮国自动", "🇭🇰 香港", "🇹🇼 台湾", "🇸🇬 狮城", "🇸🇬 狮城", "🇯🇵 小日子", "🇺🇲 漂亮国", "🐸 手动切换"] },
