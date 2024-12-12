@@ -55,7 +55,7 @@
 
 
  "outbounds": [
-    { "type": "shadowsocks", "tag": "home", "server": "p.changjiang1hao.fun", "server_port": 7788", "password": "ycj3122626.", "method": "aes-256-gcm" },
+    { "type": "shadowsocks", "tag": "home", "server": "p.changjiang1hao.fun", "server_port": 7788, "password": "ycj3122626.", "method": "aes-256-gcm" },
     { "tag": "🚀 节点选择", "type": "selector", "outbounds": ["♻️ 自动选择", "🔯 香港自动", "🔯 台湾自动", "🔯 狮城自动", "🔯 小日子自动", "🔯 棒子自动", "🔯 漂亮国自动", "🇭🇰 香港", "🇹🇼 台湾", "🇸🇬 狮城", "🇰🇷 棒子", "🇯🇵 小日子", "🇺🇲 漂亮国", "🐸 手动切换", "🎯 全球直连"] },
     { "tag": "📹 YouTube", "type": "selector", "outbounds": ["🚀 节点选择", "♻️ 自动选择", "🔯 香港自动", "🔯 台湾自动", "🔯 狮城自动", "🔯 小日子自动", "🔯 棒子自动", "🔯 漂亮国自动", "🇭🇰 香港", "🇹🇼 台湾", "🇸🇬 狮城", "🇰🇷 棒子", "🇯🇵 小日子", "🇺🇲 漂亮国", "🐸 手动切换"] },
     { "tag": "🤖 OpenAI", "type": "selector", "outbounds": ["🚀 节点选择", "♻️ 自动选择", "🔯 台湾自动", "🔯 狮城自动", "🔯 小日子自动", "🔯 棒子自动", "🔯 漂亮国自动", "🇹🇼 台湾", "🇸🇬 狮城", "🇰🇷 棒子", "🇯🇵 小日子", "🇺🇲 漂亮国", "🐸 手动切换"] },
