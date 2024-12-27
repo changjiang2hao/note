@@ -95,8 +95,9 @@
           "auto_detect_interface": true,
           "final": "🐠 漏网之鱼",
       "rules": [
+        {"action": "sniff"},
+        {"protocol": "dns", "action": "hijack-dns"},
         { "ip_cidr": "192.168.1.0/24", "outbound": "home" },
-        { "type": "logical", "mode": "or", "rules": [{ "port": 53 }, { "protocol": "dns" }], "outbound": "dns-out" },
         { "clash_mode": "direct", "outbound": "🎯 全球直连" },
         { "clash_mode": "global", "outbound": "GLOBAL" },
         { "domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one"], "outbound": "🎯 全球直连" },
