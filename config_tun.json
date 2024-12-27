@@ -50,7 +50,9 @@
       "interface_name": "singtun0",
       "address": "172.19.0.1/30",
       "mtu": 9000,
+      "gso": false,
       "auto_route": true,
+      "udp_timeout": "300s",
       "sniff": true,
       "stack": "system",
       "platform": {
