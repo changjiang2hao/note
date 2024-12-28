@@ -40,15 +40,29 @@
     {
       "type": "tun",
       "tag": "tun-in",
-      "address": "172.18.0.1/30",
-      "interface_name": "tun0",
+      "interface_name": "singtun0",
+      "address": "172.19.0.1/30",
       "mtu": 9000,
-      "gso": true,
+      "gso": false,
       "auto_route": true,
-      "auto_redirect": true,
+      "udp_timeout": "300s",
       "sniff": true,
-      "stack": "system"
-    }
+      "stack": "system",
+      "platform": {
+        "http_proxy": {
+          "enabled": true,
+          "server": "127.0.0.1",
+          "server_port": 2080
+        }
+      }
+    },
+  {
+      "type": "mixed",
+      "listen": "127.0.0.1",
+      "listen_port": 2080,
+      "sniff": true,
+      "users": []
+    } 
   ],
 
   "outbounds": [
