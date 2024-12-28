@@ -9,7 +9,7 @@
     "clash_api": {
       "external_controller": "0.0.0.0:9095",
       "external_ui": "/etc/sing-box/ui",
-      "secret": "",
+      "secret": "ycj3122626.",
       "external_ui_download_url": "https://gh.changjiang1hao.fun/https://github.com/Zephyruso/zashboard/releases/latest/download/dist.zip",
       "external_ui_download_detour": "🎯 全球直连",
       "default_mode": "rule"
