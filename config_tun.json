@@ -52,8 +52,7 @@
       "sniff": true,
       "stack": "system",
       "sniff_override_destination": false
-      }
-    },
+  }
     {
       "type": "mixed",
       "listen": "127.0.0.1",
