@@ -81,7 +81,7 @@
     { "tag": "📺️ TVB", "type": "selector", "outbounds": ["🚀 节点选择", "🔯 香港自动", "🇭🇰 香港", "⭕ 自建", "🐸 手动切换"] },
     { "tag": "🎥 Netflix", "type": "selector", "outbounds": ["🚀 节点选择", "⭕ 自建", "🇳 奈飞", "♻️ 自动选择", "🔯 香港自动", "🔯 狮城自动", "🇭🇰 香港", "🇸🇬 狮城", "🐸 手动切换"] },
     { "tag": "📲 Telegram", "type": "selector", "outbounds": ["🚀 节点选择", "♻️ 自动选择", "⭕ 自建", "🔯 香港自动", "🔯 狮城自动", "🇭🇰 香港", "🇸🇬 狮城", "🐸 手动切换"] },
-    { "tag": "🍏 Apple", "type": "selector", "outbounds": ["🎯 全球直连", "🚀 节点选择", "♻️ 自动选择", "⭕ 自建", "🔯 香港自动", "🔯 台湾自动", "🔯 狮城自动", "🇭🇰 香港", "🇸🇬 狮城", "🐸 手动切换"] },
+    { "tag": "🍏 Apple", "type": "selector", "outbounds": ["🎯 全球直连", "🚀 节点选择", "♻️ 自动选择", "⭕ 自建", "🔯 香港自动", "🔯 狮城自动", "🇭🇰 香港", "🇸🇬 狮城", "🐸 手动切换"] },
     { "tag": "🐠 漏网之鱼", "type": "selector", "outbounds": ["🚀 节点选择","🎯 全球直连"] },
     { "tag": "🐸 手动切换", "type": "selector", "outbounds": ["{all}"]},
     { "tag": "⭕ 自建", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["自建|HY2"] }] },
