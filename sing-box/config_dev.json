@@ -1,0 +1,158 @@
+{
+  "log": {
+    "disabled": false,
+    "level": "info",
+    "timestamp": true
+  },
+  
+  "experimental": {
+    "clash_api": {
+      "external_controller": "0.0.0.0:9095",
+      "external_ui": "/etc/sing-box/ui",
+      "secret": "",
+      "external_ui_download_url": "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
+      "external_ui_download_detour": "🚀 节点选择",
+      "default_mode": "rule"
+    },
+    "cache_file": {
+      "enabled": true
+    }
+  },
+  
+  "dns": {
+    "servers": [
+      { "tag": "proxyDns", "address": "tls://8.8.8.8", "detour": "🚀 节点选择" },
+      { "tag": "localDns", "address": "61.128.128.68", "detour": "🎯 全球直连" }
+    ],
+    "rules": [
+      { "outbound": "any", "server": "localDns", "disable_cache": true },
+      { "rule_set": "geosite-cn", "server": "localDns" },   
+      { "clash_mode": "direct", "server": "localDns" },
+      { "clash_mode": "global", "server": "proxyDns" },
+      { "rule_set": "geosite-geolocation-!cn", "server": "proxyDns" }
+    ],
+    "final": "localDns",
+    "strategy": "ipv4_only"
+  },
+
+    "inbounds": [
+    {
+      "type": "tun",
+      "address": "172.19.0.1/30",
+      "mtu": 9000,
+      "auto_route": true,
+      "auto_redirect": true,
+      "strict_route": true,
+      "sniff": true,
+      "endpoint_independent_nat": false,
+      "stack": "system",
+      "platform": {
+        "http_proxy": {
+          "enabled": true,
+          "server": "127.0.0.1",
+          "server_port": 2080
+        }
+      }
+    },
+    {
+      "type": "mixed",
+      "listen": "127.0.0.1",
+      "listen_port": 2080,
+      "sniff": true,
+      "users": []
+    }
+  ],
+
+  "outbounds": [
+    { "tag": "🚀 节点选择", "type": "selector", "outbounds": ["🇭🇰 自建HK-proxy", "🇸🇬 自建sg", "🇸🇬 自建HY2-SG"] },
+    { "tag": "🤖 OpenAI", "type": "selector", "outbounds": ["🇭🇰 自建HK-proxy", "🇸🇬 自建sg", "🇸🇬 自建HY2-SG"] },
+    { "tag": "🎯 全球直连", "type": "direct" },
+    { "tag": "dns-out", "type": "dns" },
+    {
+      "tag": "🇭🇰 自建HK-proxy",
+      "type": "vless",
+      "server": "www.changjiang1hao.fun",
+      "server_port": 65432,
+      "uuid": "44122e94-ea17-4dcc-b4e7-96b797e57ab8",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "animsvgm5.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "M_QWYCFZrqrnX8ayOltDIeyCLRp3LC4j-KnT8CLsRCc",
+          "short_id": "19f4"
+        }
+      }
+    },
+    {
+      "tag": "自建sg",
+      "type": "vless",
+      "server": "www.changjiang1hao.fun",
+      "server_port": 65432,
+      "uuid": "8ce3c72d-07aa-4175-afc9-54dbd6e894b0",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "animsvgm5.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "M_QWYCFZrqrnX8ayOltDIeyCLRp3LC4j-KnT8CLsRCc",
+          "short_id": "19f4"
+        }
+      }
+    },
+    {
+      "tag": "🇸🇬 自建HY2-SG",
+      "type": "hysteria2",
+      "server": "www.changjiang1hao.fun",
+      "server_port": 446,
+      "password": "osZxKU.p9qCg1",
+      "up_mbps": 10,
+      "down_mbps": 100,
+      "tls": {
+        "enabled": true,
+        "server_name": "www.changjiang1hao.fun",
+        "insecure": false,
+        "alpn": [
+          "h3"
+        ]
+      }
+    }
+  ],
+
+  
+  "route": {
+        "auto_detect_interface": true,
+        "final": "🚀 节点选择",
+    "rules": [
+      {"protocol": "dns", "action": "hijack-dns"},
+      { "clash_mode": "direct", "outbound": "🎯 全球直连" },
+      { "clash_mode": "global", "outbound": "GLOBAL" },
+      { "domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one"], "outbound": "🎯 全球直连" },
+      { "rule_set": "geosite-private", "outbound": "🎯 全球直连" },
+      { "rule_set": "geosite-chat", "outbound": "🤖 OpenAI" },  
+      { "rule_set": "geosite-geolocation-!cn", "outbound": "🚀 节点选择" },
+      { "rule_set": ["geoip-cn", "geosite-cn"], "outbound": "🎯 全球直连" }
+    ],
+    
+    "rule_set": [
+      { "tag": "geosite-chat", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-ai-chat-!cn.srs", "download_detour": "🚀 节点选择" },
+      { "tag": "geosite-geolocation-!cn", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/geolocation-!cn.srs", "download_detour": "🚀 节点选择" },
+      { "tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/cn.srs", "download_detour": "🚀 节点选择" },
+      { "tag": "geosite-cn", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/cn.srs", "download_detour": "🚀 节点选择" },
+      { "tag": "geosite-private", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/private.srs", "download_detour": "🚀 节点选择" }
+    ]
+  }
+}
