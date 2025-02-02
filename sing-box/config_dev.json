@@ -38,22 +38,21 @@
     "inbounds": [
     {
       "type": "tun",
-      "address": "172.19.0.1/30",
+      "tag": "tun-in",
+      "interface_name": "singtun0",
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
       "mtu": 9000,
+      "gso": false,
       "auto_route": true,
-      "auto_redirect": true,
-      "strict_route": true,
+      "udp_timeout": "300s",
       "sniff": true,
-      "endpoint_independent_nat": false,
       "stack": "system",
-      "platform": {
-        "http_proxy": {
-          "enabled": true,
-          "server": "127.0.0.1",
-          "server_port": 2080
-        }
-      }
+      "sniff_override_destination": false
     },
+
     {
       "type": "mixed",
       "listen": "127.0.0.1",
@@ -92,7 +91,7 @@
       }
     },
     {
-      "tag": "自建sg",
+      "tag": "🇸🇬 自建sg",
       "type": "vless",
       "server": "www.changjiang1hao.fun",
       "server_port": 65432,
